@@ -1,0 +1,18 @@
+# Node & Vite
+/client/node_modules/
+/client/dist/
+/client/.env
+
+# Python & Flask
+/server/venv/
+/server/*.py[cod]
+/server/__pycache__/
+/server/migrations/
+
+# General caches
+**/__pycache__/
+/*.py[cod]
+
+# OS
+.DS_Store
+# redeploy marker

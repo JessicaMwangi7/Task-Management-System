@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    // adjust this path if your jsconfig.json lives at your repo root:
+    // use "client/src/components/ui/button.js" instead
+    "src/components/ui/button.js"
+  ]
+}

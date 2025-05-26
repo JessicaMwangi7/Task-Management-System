@@ -1,0 +1,230 @@
+/* client/src/index.css */
+
+/* Import Tailwind v4 and the new animations plugin */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Light theme variables */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #092c4c;
+  --primary-foreground: #ffffff;
+  --secondary: #f2994a;
+  --secondary-foreground: #000000;
+  --muted: #e0e0e0;
+  --muted-foreground: #6f6f6f;
+  --accent: #e0e0e0;
+  --accent-foreground: #000000;
+  --destructive: #eb5757;
+  --destructive-foreground: #ffffff;
+  --border: #bdbdbd;
+  --input: #e0e0e0;
+  --ring: #828282;
+
+  --info: #2f80ed;
+  --success: #27ae60;
+  --warning: #e2b93b;
+  --error: #eb5757;
+
+  --chart-1: #2f80ed;
+  --chart-2: #27ae60;
+  --chart-3: #e2b93b;
+  --chart-4: #eb5757;
+  --chart-5: #f2994a;
+
+  --black-1: #000000;
+  --black-2: #1d1d1d;
+  --black-3: #282828;
+  --gray-1: #333333;
+  --gray-2: #4f4f4f;
+  --gray-3: #828282;
+  --gray-4: #bdbdbd;
+  --gray-5: #e0e0e0;
+
+  --radius: 0.625rem;
+  --sidebar: #f8f8f8;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #092c4c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f8f8f8;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: #bdbdbd;
+}
+
+/* Dark theme overrides */
+.dark {
+  --background: #1d1d1d;
+  --foreground: #ffffff;
+  --card: #1d1d1d;
+  --card-foreground: #ffffff;
+  --popover: #1d1d1d;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #092c4c;
+  --secondary: #f2994a;
+  --secondary-foreground: #ffffff;
+  --muted: #333333;
+  --muted-foreground: #bdbdbd;
+  --accent: #333333;
+  --accent-foreground: #ffffff;
+  --destructive: #eb5757;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #333333;
+  --ring: #4f4f4f;
+
+  --info: #2f80ed;
+  --success: #27ae60;
+  --warning: #e2b93b;
+  --error: #eb5757;
+
+  --chart-1: #2f80ed;
+  --chart-2: #27ae60;
+  --chart-3: #e2b93b;
+  --chart-4: #eb5757;
+  --chart-5: #f2994a;
+
+  --sidebar: #1d1d1d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #f2994a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #333333;
+  --sidebar-ring: #4f4f4f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-info: var(--info);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-black-1: var(--black-1);
+  --color-black-2: var(--black-2);
+  --color-black-3: var(--black-3);
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Roboto", sans-serif;
+  }
+
+  /* Headings */
+  h1, .h1 {
+    @apply font-bold leading-tight text-[56px];
+  }
+  h2, .h2 {
+    @apply font-bold leading-tight text-[40px];
+  }
+  h3, .h3 {
+    @apply font-bold leading-tight text-[28px];
+  }
+  h4, .h4 {
+    @apply font-bold leading-tight text-[20px];
+  }
+
+  /* Body text */
+  .body-normal {
+    @apply font-normal leading-relaxed text-[18px];
+  }
+  .body-1-bold {
+    @apply font-bold leading-relaxed text-[18px];
+  }
+  .body-2 {
+    @apply font-normal leading-relaxed text-[16px];
+  }
+  .body-2-bold {
+    @apply font-bold leading-relaxed text-[16px];
+  }
+  .body-3 {
+    @apply font-normal leading-relaxed text-[14px];
+  }
+  .body-3-bold {
+    @apply font-bold leading-relaxed text-[14px];
+  }
+
+  /* Buttons & fields */
+  .btn-default {
+    @apply text-[20px] leading-[24px];
+  }
+  .btn-small {
+    @apply text-[16px] leading-[24px];
+  }
+  .placeholder-text {
+    @apply text-[16px] leading-[24px];
+  }
+  .field-title {
+    @apply text-[12px] leading-[16px];
+  }
+  .field-description {
+    @apply text-[12px] leading-[16px];
+  }
+
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    h1, .h1    { @apply text-[32px]; }
+    h2, .h2    { @apply text-[28px]; }
+    h3, .h3    { @apply text-[24px]; }
+    h4, .h4    { @apply text-[20px]; }
+    .body-normal,
+    .body-1-bold { @apply text-[16px]; }
+    .body-2,
+    .body-2-bold { @apply text-[14px]; }
+    .body-3,
+    .body-3-bold { @apply text-[12px]; }
+  }
+}
