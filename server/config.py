@@ -21,4 +21,5 @@ class Config:
     JWT_ACCESS_TOKEN_EXPIRES      = False
 
     # CORS_ORIGINS = os.getenv("CORS_ORIGINS", "https://task-management-system-sigma-lovat.vercel.app").split(",")
-    CORS_ORIGINS                  = os.getenv("CORS_ORIGINS", "http://localhost:5173")
+    # CORS_ORIGINS                  = os.getenv("CORS_ORIGINS", "http://localhost:5173")
+    CORS_ORIGINS                  = ["*"]
